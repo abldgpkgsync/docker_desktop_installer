@@ -37,7 +37,7 @@ jobs:
           name: "Docker Desktop Binaries"
           body: |
             自动同步自 Docker Desktop 官网的二进制程序
-          tag_name: "v$(date +%Y.%m.%d)"  # 用v2025.11.19
+          tag_name: latest # 用v2025.11.19
           files: |
             linux.sh
             docker_desktop_installer_windows_amd64.exe
