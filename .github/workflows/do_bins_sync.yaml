@@ -29,16 +29,9 @@ jobs:
           curl -o docker_desktop_installer_mac_arm64.dmg     "https://desktop.docker.com/mac/main/arm64/Docker.dmg"
           curl -o docker_desktop_installer_debian_amd64.deb  "https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb"
           curl -o docker_desktop_installer_fedora_amd64.rpm  "https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.rpm"
-
-      - name: Release
-        uses: softprops/action-gh-release@v2
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          files: |
-            linux.sh
-            docker_desktop_installer_windows_amd64.exe
-            docker_desktop_installer_windows_arm64.exe
-            docker_desktop_installer_mac_amd64.dmg
-            docker_desktop_installer_mac_arm64.dmg
-            docker_desktop_installer_fedora_amd64.deb
-            docker_desktop_installer_fedora_amd64.rpm
-          tag_name: latest
+          name: my-artifact
+          path: ${{ github.workspace }}/*.{gz,exe,dmg,deb,rpm,sh}
