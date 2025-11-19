@@ -42,7 +42,7 @@ jobs:
         with:
           overwrite_files: false  # 不覆盖已有版本(避免重复发布同一版本)
           tag_name: ${{env.VTAG}}
-          release_name: "Daily Build - ${{env.VTAG}}"
+          name: "Daily Build - ${{env.VTAG}}"
           body: |
             这是一个自动生成的每日构建发布。
             - 构建时间: ${{env.VTAG}}
